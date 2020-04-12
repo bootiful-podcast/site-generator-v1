@@ -19,13 +19,12 @@ public class MarkdownService {
 	}
 
 	@SneakyThrows
-	public String convertMarkdownToHtml(Resource resource) {
+	public String convertMarkdownTemplateToHtml(Resource resource) {
 		var markdown = Files.readString(resource.getFile().toPath());
-		return convertMarkdownToHtml(markdown);
-
+		return convertMarkdownTemplateToHtml(markdown);
 	}
 
-	public String convertMarkdownToHtml(String markdown) {
+	public String convertMarkdownTemplateToHtml(String markdown) {
 		var document = this.parser.parse(markdown);
 		return this.renderer.render(document);
 	}

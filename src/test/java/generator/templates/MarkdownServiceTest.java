@@ -23,7 +23,7 @@ public class MarkdownServiceTest {
 
 	@Test
 	public void markdown() throws Exception {
-		String markdownHtml = this.markdownService.convertMarkdownToHtml(this.resource);
+		String markdownHtml = this.markdownService.convertMarkdownTemplateToHtml(this.resource);
 		log.debug(markdownHtml);
 		Assert.assertTrue(markdownHtml.contains("<li>Now is the time</li>"));
 		Assert.assertTrue(markdownHtml.contains("<h2>A Subheader</h2>"));

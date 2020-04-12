@@ -5,11 +5,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.joshlong.git.GitTemplate;
 import generator.templates.MarkdownService;
 import generator.templates.MustacheService;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.log4j.Log4j2;
-import org.eclipse.jetty.server.RequestLog;
 import org.eclipse.jgit.api.Git;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.NestedExceptionUtils;
@@ -21,7 +18,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.util.ReflectionUtils;
-import org.springframework.util.StringUtils;
 
 import java.io.*;
 import java.net.URL;
@@ -135,7 +131,7 @@ public class GeneratorJob {
 					.orElse(DateUtils.getYearFor(new Date()));
 			var allPodcasts = podcastList.stream()
 					.peek(pr -> this.mapOfRenderedMarkdown.put(pr.getUid(),
-							markdownService.convertMarkdownToHtml(pr.getDescription()).trim()))
+							markdownService.convertMarkdownTemplateToHtml(pr.getDescription()).trim()))
 					.map(p -> new PodcastRecord(p, "episode-photos/" + p.getUid() + ".jpg",
 							dateFormat.format(p.getDate()), this.mapOfRenderedMarkdown.get(p.getUid())))
 					.collect(Collectors.toList());
