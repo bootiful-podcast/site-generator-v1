@@ -2,7 +2,7 @@ package generator;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import generator.git.GitTemplate;
+import com.joshlong.git.GitTemplate;
 import generator.templates.MarkdownService;
 import generator.templates.MustacheService;
 import lombok.Data;
