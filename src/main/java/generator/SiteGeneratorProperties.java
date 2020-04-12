@@ -15,7 +15,7 @@ public class SiteGeneratorProperties {
 
 	private boolean disabled;
 
-	private String charset;
+	// private String charset;
 
 	private URI apiServerUrl;
 
@@ -26,41 +26,6 @@ public class SiteGeneratorProperties {
 	private final Output output = new Output();
 
 	private final Launcher launcher = new Launcher();
-
-	private final Git git = new Git();
-
-	@Data
-	public static class Git {
-
-		private File localCloneDirectory = new File(System.getProperty("user.home"), "blog-clone");
-
-		private String uri;
-
-		private final Ssh ssh = new Ssh();
-
-		private final Http http = new Http();
-
-		private boolean online = true;
-
-		@Data
-		public static class Ssh {
-
-			private boolean enabled;
-
-			private String password;
-
-		}
-
-		@Data
-		public static class Http {
-
-			private String username = null, password = "";
-
-			private boolean enabled;
-
-		}
-
-	}
 
 	@Data
 	public static class Output {
