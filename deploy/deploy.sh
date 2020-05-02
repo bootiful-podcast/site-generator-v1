@@ -11,5 +11,3 @@ cf set-env ${APP_NAME} SPRING_PROFILES_ACTIVE cloud
 cf set-env ${APP_NAME} GIT_URI $GIT_URI
 cf set-env ${APP_NAME} PODCAST_RMQ_ADDRESS $PODCAST_RMQ_ADDRESS
 cf start $APP_NAME
-
-
