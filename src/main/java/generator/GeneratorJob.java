@@ -200,7 +200,8 @@ public class GeneratorJob {
 		objectNode.put("date", pr.getPodcast().getDate().getTime());
 		objectNode.put("episodePhotoUri", pr.getPodcast().getPodbeanPhotoUri());
 		objectNode.put("description", mapOfRenderedMarkdown.get(pr.getPodcast().getUid()));
-		objectNode.put("dataAndTime", pr.getDateAndTime());
+		objectNode.put("dateAndTime", pr.getDateAndTime()); // correct
+		objectNode.put("dataAndTime", pr.getDateAndTime()); // does anything else use this mistaken property?
 		objectNode.put("episodeUri",
 				this.properties.getApiServerUrl() + "/podcasts/" + pr.getPodcast().getUid() + "/produced-audio");
 		return objectNode;
