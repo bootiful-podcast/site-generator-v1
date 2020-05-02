@@ -2,8 +2,6 @@
 
 source "$(cd $(dirname $0) && pwd)/env.sh"
 
-
-
 export APP_NAME=site-generator
 export TASK_NAME=${APP_NAME}-task
 cf push --no-start -u none --no-route -p target/${APP_NAME}.jar ${APP_NAME}
