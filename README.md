@@ -1,5 +1,7 @@
 # Site Generator 
 
+![Site Generator](https://github.com/bootiful-podcast/site-generator/workflows/Site%20Generator/badge.svg)
+
 This reads the data from the `podcast` tables and generates new pages and then commits those changes to a Github pages-based site.
 
 *   There is a Github Pages-based [site](https://github.com/bootiful-podcast/bootiful-podcast.github.io). 
