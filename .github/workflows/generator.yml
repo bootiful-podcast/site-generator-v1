@@ -1,7 +1,5 @@
-# Build the Twitter Pinboard Cleanup Job
-# https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
 
-name: CI
+name: Site Generator
 
 env:
   SPRING_PROFILES_ACTIVE: ci
