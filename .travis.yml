@@ -23,6 +23,7 @@ env:
   - SPRING_PROFILES_ACTIVE=ci
 
 script:
+  - env 
   - mvn -e -Dspring.profiles.active=ci verify deploy
   - ./deploy/cf.sh
   - ./deploy/deploy.sh
