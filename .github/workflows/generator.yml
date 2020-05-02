@@ -51,8 +51,8 @@ jobs:
           key: ${{ runner.os }}-m2
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Build and run the application
-        run: mvn -f pom.xml deploy spring-boot:run
+      - name: Build the application
+        run: mvn -e -Dspring.profiles.active=ci verify deploy
 
       - name: Deploy to Cloud Foundry
         run: |
